@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CRUD App</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>DASHBOARD1</h1>
+
+  <div class="form-container">
+    <input type="text" id="name" placeholder="Item Name">
+    <input type="text" id="description" placeholder="Description">
+    <button id="addBtn">Add Item</button>
+    <div id="errorMessage" style="color: red; display: none;"></div>
+  </div>
+
+  <table id="items-table">
+    <thead>
+      <tr>
+        <th>ID</th><th>Name</th><th>Description</th><th>Actions</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <!-- Hidden form for updating -->
+  <div class="form-container" id="updateForm" style="display:none;">
+    <h3>Update Item</h3>
+    <input type="text" id="updateName" placeholder="New Name">
+    <input type="text" id="updateDescription" placeholder="New Description">
+    <button onclick="saveUpdate()">Save</button>
+    <button onclick="cancelUpdate()">Cancel</button>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
